@@ -34,7 +34,7 @@ def test_db_connection():
         # google sql cloud database -- ip whitelisting test for heroku app
         from mysql.connector import connect
         cnx = connect(
-            host='35.239.109.243',
+            host='35.238.34.27',
             database='demo',
             user='nivratti',
             password='Rajendra4@@', 
