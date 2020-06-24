@@ -30,19 +30,25 @@ def ip():
 
 @app.route('/test-mysql-db-connection')
 def test_db_connection():
-    # google sql cloud database -- ip whitelisting test for heroku app
-    from mysql.connector import connect
-    cnx = connect(
-        host='35.239.109.243',
-        database='demo',
-        user='nivratti',
-        password='Rajendra4@@', 
-        port=3306
-    )
-    d = {
-        "success": True,
-        "message": "Connected to database successfully",
-    }   
+    try:
+        # google sql cloud database -- ip whitelisting test for heroku app
+        from mysql.connector import connect
+        cnx = connect(
+            host='35.239.109.243',
+            database='demo',
+            user='nivratti',
+            password='Rajendra4@@', 
+            port=3306
+        )
+        d = {
+            "success": True,
+            "message": "Connected to database successfully",
+        }
+    except Exception as e:
+        d = {
+            "success": False,
+            "message": str(e),
+        }
     return jsonify(d)
 
 if __name__ == '__main__':
