@@ -37,7 +37,7 @@ def test_db_connection():
             host='35.238.34.27',
             database='demo',
             user='nivratti',
-            password='Rajendra4@@', 
+            password='nivpoijkldfghcc@@', 
             port=3306
         )
         d = {
